@@ -32,94 +32,128 @@ Use this SQL to create your database:
 ```sql
 CREATE DATABASE IF NOT EXISTS db_blog_application;
 USE db_blog_application;
+```
+
+---
+
+# 📁 Project Structure
 
 
-<---------------------------------------------------------->
-📁 Project Structure
-
-
-
+```
 project-root/
 ├── index.js                  # Main app entry
-├── swagger.js              # Swagger configuration
-├── .env                    # Environment variables
-├── /config/                # DB & config setup
-├── /models/                # Sequelize models
-├── /modules/v1/            # Versioned APIs
+├── app.js                    # Exportable Express app (for testing)
+├── swagger.js                # Swagger configuration
+├── add-routing.js            # Centralized route loader
+├── .env                      # Environment variables
+├── /config/                  # DB & config setup
+├── /models/                  # Sequelize models
+├── /modules/v1/              # Versioned APIs
 │   ├── user/
+│   │   ├── controller/
+│   │   │   └── user.controller.js
+│   │   ├── routes/
+│   │   │   └── user.routes.js
 │   ├── post/
+│   │   ├── controller/
+│   │   │   └── post.controller.js
+│   │   ├── routes/
+│   │   │   └── post.routes.js
 │   ├── comment/
-│   └── category/
-├── /middleware/            # Auth, API key middleware
-├── /validators/            # Joi schemas
-├── /helpers/               # Utility functions
-├── /tests/                 # Unit & Integration tests
+│   │   ├── controller/
+│   │   │   └── comment.controller.js
+│   │   ├── routes/
+│   │   │   └── comment.routes.js
+├── screenshots/
+│   ├── swagger_ui.png         # Swagger UI screenshot
+│   └── test_results.png       # Unit + Integration test result screenshot
+├── /middleware/              # Auth, API key middleware
+├── /validators/              # Joi schemas
+├── /helpers/                 # Utility functions
+├── /tests/                   # Unit & Integration tests
 │   ├── unit/
 │   └── integration/
 └── package.json
 
+```
+
+---
 
 
-
-<---------------------------------------------------------->
-⚙️ Installation & Setup
-
+# ⚙️ Installation & Setup
 1. Clone the Repository:
+```
 git clone https://github.com/your-username/blog_application_backend.git
 cd blog_application_backend
+```
 
 2. Install Dependencies:
+```
 npm install
+```
 
 3. Configure Environment Variables:
 
 Create a .env file:
+```
 PORT=5000
 DB_HOST=localhost
-DB_PORT=3306
 DB_USER=root
-DB_PASSWORD=your_password
+DB_PASSWORD=your-password
 DB_NAME=db_blog_application
-JWT_SECRET=your_jwt_secret
+DB_DIALECT=mysql
 API_KEY=MyBlogAPIProject
-
+JWT_SECRET=your-secret-key
+```
 4. Run the Application:
-
+```
 npm start
-Visit: http://localhost:5000
+```
+ - Visit:
+```
+http://localhost:5000
+```
+---
 
 
-
-<---------------------------------------------------------->
-📖 Swagger API Docs
+# 📖 Swagger API Docs
 Access the Swagger UI for all API documentation:
-
+```
 http://localhost:5000/api-docs
+```
+- Supports both x-api-key and Authorization: <JWT> headers.
 
-✅ Supports both x-api-key and Authorization: Bearer <JWT> headers.
 
 
-
-<---------------------------------------------------------->
-🧪 Running Tests
+--- 
+# 🧪 Running Tests
 
 Unit Tests:
-
+```
 npm run test:user-unit
 npm run test:post-unit
 npm run test:comment-unit
-
+```
 
 Integration Tests:
-
+```
 npm run test:user-integration
 npm run test:post-integration
 npm run test:comment-integration
+```
 
+--- 
 
+## 📸 Screenshots
 
-<---------------------------------------------------------->
-📂 Modules
+> 📁 **You can find all screenshots inside the [`/screenshots`](./screenshots) folder.**
+
+- `swagger_ui` → Shows the complete Swagger API documentation UI.
+- `test_results` → Shows results of both unit and integration tests (run via Jest + Supertest).
+
+---
+
+# 📂 Modules
 🔐 User Module
 - Register, Login (email/social)
 - Profile management

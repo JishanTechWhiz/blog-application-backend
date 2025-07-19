@@ -50,7 +50,6 @@ project-root/
 ├── database/
 │   ├── blog_db_setup.sql     # Database Table
 ├── swagger.js                # Swagger configuration
-├── add-routing.js            # Centralized route loader
 ├── .env                      # Environment variables
 ├── /config/                  # DB & config setup
 ├── /models/                  # Sequelize models
@@ -70,6 +69,7 @@ project-root/
 │   │   │   └── comment.controller.js
 │   │   ├── routes/
 │   │   │   └── comment.routes.js
+|   ├── add-routing.js            # Centralized route loader
 ├── screenshots/
 │   ├── swagger_ui.png         # Swagger UI screenshot
 │   └── test_results.png       # Unit + Integration test result screenshot

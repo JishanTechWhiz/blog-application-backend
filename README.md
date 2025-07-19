@@ -89,7 +89,7 @@ project-root/
 # ⚙️ Installation & Setup
 1. Clone the Repository:
 ```
-git clone https://github.com/your-username/blog_application_backend.git
+git clone https://github.com/JishanTechWhiz/blog-application-backend.git
 cd blog_application_backend
 ```
 

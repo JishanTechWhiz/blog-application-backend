@@ -27,6 +27,10 @@ Tables:
 - `tbl_comment`
 - `tbl_category`
 
+**You can initialize your database using the script provided here**:
+
+📄 database/blog_db_setup.sql
+
 Use this SQL to create your database:
 
 ```sql
@@ -43,6 +47,8 @@ USE db_blog_application;
 project-root/
 ├── index.js                  # Main app entry
 ├── app.js                    # Exportable Express app (for testing)
+├── database/
+│   ├── blog_db_setup.sql     # Database Table
 ├── swagger.js                # Swagger configuration
 ├── add-routing.js            # Centralized route loader
 ├── .env                      # Environment variables
